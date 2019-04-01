@@ -13,3 +13,7 @@ function add_optional(a: number, b: number = 100): number {
 console.log(add(10, 2)); // 12
 console.log(add_optional(10, 2)); // 12
 console.log(add_optional(10)); // 120
+
+var minus = (a: number, b: number): number => a - b;
+
+console.log(minus(100, 22));
