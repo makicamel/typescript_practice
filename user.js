@@ -1,8 +1,4 @@
 var User = /** @class */ (function () {
-    // name: string;
-    // constructor(name: string) {
-    //   this.name = name;
-    // }
     function User(_name) {
         this._name = _name;
     }
@@ -21,8 +17,3 @@ var User = /** @class */ (function () {
     });
     return User;
 }());
-var user = new User('Maki');
-console.log(user.name);
-user.name = 'MAKI';
-console.log(user.name);
-user.sayHi();
