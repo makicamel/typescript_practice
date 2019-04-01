@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 var User = /** @class */ (function () {
     function User(_name) {
         this._name = _name;
+        User.count++;
     }
     User.prototype.sayHi = function () {
         console.log("Hi! I am " + this._name + ".");
@@ -28,6 +29,10 @@ var User = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    User.showDescription = function () {
+        console.log('This class is about user.');
+    };
+    User.count = 0;
     return User;
 }());
 var AdminUser = /** @class */ (function (_super) {
@@ -44,5 +49,7 @@ var AdminUser = /** @class */ (function (_super) {
     };
     return AdminUser;
 }(User));
-var user = new AdminUser('Maki', 34);
-user.sayHi();
+var alice = new User('Alice');
+var bob = new User('Bob');
+console.log(User.count);
+User.showDescription();

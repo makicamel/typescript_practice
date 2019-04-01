@@ -1,5 +1,6 @@
 class User {
   constructor(protected _name: string) {
+    User.count++;
   }
   sayHi(): void {
     console.log(`Hi! I am ${this._name}.`);
@@ -9,6 +10,10 @@ class User {
   }
   set name(newValue: string) {
     this._name = newValue;
+  }
+  static count: number = 0;
+  static showDescription(): void {
+    console.log('This class is about user.')
   }
 }
 
@@ -25,5 +30,7 @@ class AdminUser extends User {
   }
 }
 
-var user = new AdminUser('Maki', 34);
-user.sayHi();
+var alice = new User('Alice');
+var bob = new User('Bob');
+console.log(User.count);
+User.showDescription();
